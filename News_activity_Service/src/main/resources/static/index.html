@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Web image and title -->
+    <title>Sign in - MFU Activity & News</title>
+    <link rel="icon" href="/img/MFU-logo.png">
+    <!-- CSS file -->
+    <link rel="stylesheet" href="SignIn.css">
+</head>
+<body>
+    <!-- Header bar -->
+    <header>
+        <img src="/img/Logo.png" alt="MFU Activity & News Logo" class="logoImg">
+        <div class="langContainer" data-value="en" id="langContainer">
+            <a class="en" id="en" style="margin: 12px;" href="#">EN</a>
+            <div class="langLine"></div>
+            <a class="th" id="th" style="margin: 12px;" href="#">TH</a>
+        </div>
+    </header>
+    <!-- Main block / Sign in form -->
+     <main class="mainContainer">
+        <form th:action="@{}">
+            <h1 class="title" id="title">Sign in</h1>
+            <input class="inputContainer" id="staffId" style="top: 32%;" type="number" placeholder="Staff id" required></input>
+            <input class="inputContainer" id="password" style="top: 49%;" type="password" placeholder="Password" minlength="6" maxlength="12" required></input>
+            <img class="password-icon" id="passIcon" src="/img/hidden-icon.svg" alt="password-icon" style="top: 51.5%;">
+        </form>
+        <span class="errorMessage" id="errorMessage"></span>
+        <button type="button" class="signInButton" id="signInButton">Sign in</button>
+        <a class="forgot" id="forgot" href="#">Forgot Password</a> <!-- Go to Register page -->
+     </main>
+
+    <!-- JS file -->>
+    <script src="SignIn.JS"></script>
+</body>
+</html>
