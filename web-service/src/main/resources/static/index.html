@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zenwear Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Inria+Serif&family=Inter:wght@400;700&family=Kumbh+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+<script>
+    // เช็คการล็อกอิน
+    function checkLogin() {
+        if (!localStorage.getItem('isLoggedIn')) {
+            window.location.href = '../Login/index.html';
+        }
+    }
+    // เรียกใช้ฟังก์ชันเช็คการล็อกอิน
+    checkLogin();
+    
+    // ฟังก์ชันออกจากระบบ
+    function logout() {
+        localStorage.removeItem('isLoggedIn');
+        localStorage.removeItem('user');
+        window.location.href = '../Login/index.html';
+    }
+    </script>
+    <div class="container">
+        <div class="image-container">
+            <img src="../image/01.jpg" alt="Zenwear background" class="background-image">
+        </div>
+        <div class="login-container">
+            <div class="login-box">
+                <div class="logo-container">
+                    <h1 class="logo">Z</h1>
+                    <p class="brand">ZENWEAR</p>
+                </div>
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <img src="../image/user-icon.svg" class="input-icon" alt="user icon">
+                        <input type="text" id="username" name="username" class="user-input" placeholder="Username" required>
+                    </div>
+                    <div class="input-group">
+                        <img src="../image/lock-icon.svg" class="input-icon" alt="lock icon">
+                        <input type="password" id="password" name="password" class="password-input" placeholder="Password" required>
+                        <i class="fas fa-eye password-toggle"></i>
+                    </div>
+                    <button type="submit" class="login-button">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
